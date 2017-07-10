@@ -1,0 +1,13 @@
+# count total hou many dollar you have?
+def count_d(quarters,dimes,nickels,pennies):
+    total=(quarters*25 + dimes*10 + nickels*5 + pennies*1)/100.0
+    return total
+    
+print "how many dollar you have?"
+my_quarters = int(raw_input("quarters:"))
+my_dimes = int(raw_input("dimes:"))
+my_nickels = int(raw_input("nickels:"))
+my_pennies = int(raw_input("pennies:"))
+
+total_dollar = count_d(my_quarters,my_dimes,my_nickels,my_pennies)
+print "total is",'$',total_dollar
