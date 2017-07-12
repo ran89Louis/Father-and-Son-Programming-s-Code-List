@@ -1,0 +1,33 @@
+class BankAccount:
+    def __init__(self):
+        self.account_name = "Lucy"
+        self.account_num = "00001"
+        self.balance = 0.00
+    def __str__(self):
+        msg = "My Balance of account is "
+        if self.account_debit > 0:
+            msg = msg + str(self.balance)
+            print msg
+        elif self.account_credit > 0:
+            msg = msg + str( self.balance)
+            print msg
+        else:
+            print self.balance
+
+    def account_debit(self,money):
+        self.balance = self.balance + float(money)
+        return self.balance
+        print self.balance
+    def account_credit(self,money):
+        self.balance = self.balance - float(money)
+        return self.balance
+        print self.balance
+my_account = BankAccount()
+print "I reserve 100.00 into my account"
+my_account.account_debit(100)
+my_account.__str__()
+print "I take out 50.00 from my account"
+my_account.account_credit(50)
+my_account.__str__()
+print "show my balance "
+my_account.__str__()
