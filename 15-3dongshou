@@ -1,5 +1,46 @@
+#this is 15-1 homework
+# This is a module file
+def printMyNameBig():
+    print "  CCCC       A       RRRRR  TTTTTTT  EEEEEE  RRRRR  "
+    print " C    C     A A      R    R    T     E       R    R "
+    print "C          A   A     R    R    T     EEEE    R    R "
+    print "C         AAAAAAA    RRRRR     T     E       RRRRR  "
+    print " C    C  A       A   R    R    T     E       R    R "
+    print "  CCCC  A         A  R     R   T     EEEEEE  R     R"
+#save as printname
+
+#This is another file
+import printname
+
+for i  in range (0, 1):
+    printname.printMyNameBig()
+    
+#This is 15-2 homework
 from my_module import c_to_f
 
 celsius = float(raw_input("Enter a temprature in Celsius: "))
 fahrenheit = c_to_f(celsius)
 print "That's ", fahrenheit, "degrees Fahrenheit"
+
+##This is 15-3 honmework
+from random import randint
+number = [] 
+for i in range(0,5):
+    num = randint(1, 20)
+    number.append(num)
+    
+print number
+
+#This is 15-4 homework
+import time
+from time import sleep
+from random import randint
+
+print "you will work in 30 seconds , print a random per every  3 seconds"
+for i in range (0,10):
+    print randint(0, 100)
+    sleep(3)
+
+
+    
+
