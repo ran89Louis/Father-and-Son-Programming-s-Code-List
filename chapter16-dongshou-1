@@ -1,0 +1,54 @@
+# draw a ellipse that width 200px ,height 250px，x = 50，y = 50
+import pygame, sys
+pygame.init()
+screen = pygame.display.set_mode([640, 480])
+screen.fill([255, 255, 255])
+pygame.draw.ellipse(screen, [255, 0, 0], [50, 50, 200, 250], 0)
+pygame.display.flip()
+running = True
+while runnning:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+pygame.quit()
+
+#This is homework 2,3
+#如果要修改图片，仅需要对这一语句做修改my_ball = pygame.image.load("DozerBlue.png")
+将pygame.image.load("")文件名修改就可
+#如果要改变速度
+x_speed = 10
+y_speed= 10
+改为
+x_speed = 38
+y_speed = 7
+
+##4. 试着修改代码清单 16-15，让球在隐形的墙或地板（不是窗口边界）上反弹
+## 同上代码，仅修改判断条件，
+    if x > screen.get_width()-250 or x < 0:
+        x_speed = - x_speed
+    if y > screen.get_height() -250 or y <0:
+        y_speed = - y_speed
+    screen.blit(my_ball, [x, y])
+    pygame.display.flip()
+pygame.quit()
+## 应该是将pygame.display.flip() 和延迟放到for循环内部，可以看到矩形一个个画出，因为这里放慢了矩形出现的时间。
+import pygame, sys,random
+from pygame.color import THECOLORS
+pygame.init()
+screen = pygame.display.set_mode([640,480])
+screen.fill([255, 255, 255])
+for i in range(100):
+    width = random.randint(0, 250)
+    height = random.randint(0, 100)
+    top = random.randint(0, 400)
+    left = random.randint(0, 500)
+    pygame.draw.rect(screen, THECOLORS['black'],[left, top, width, height], 1)
+    pygame.display.flip()
+    pygame.time.delay(30)
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+             running = False
+            
+pygame.quit()
