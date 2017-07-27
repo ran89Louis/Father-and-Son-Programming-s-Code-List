@@ -81,24 +81,30 @@ while running:
         pygame.display.flip()
         
     if myBall.rect.top >= screen.get_rect().bottom:
-        splat.play()
+        if not done:
+            splat.play()
         lives = lives - 1
         if lives == 0:
+            bye.play()
             final_text1 = "Game Over"
             final_text2 = "Your final score is: " + str(score)
-            ft1_font = pageme.font.Font(None, 70)
+            ft1_font = pygame.font.Font(None, 70)
             ft1_surf = ft1_font.render(final_text1, 1, (0, 0, 0))
             ft2_font = pygame.font.Font(None, 50)
             ft2_surf = ft2_font.render(final_text2, 1, (0, 0, 0))
-            screen.blit(ft1_surf,(screen.get_width()/2 - \
-                       ft1_surf.get_width/2, 100))
+            screen.blit(ft1_surf,[screen.get_width()/2 - \
+                       ft1_surf.get_width/2, 100])
             screen.blit(ft2_surf,[screen.get_width()/2 - \
                         ft2_surf.get_width()/2, 200])
             pygame.display.flip()
             done = True
-            bye.play()
         else:  #wait 2 seconds,then start the next ball
-            pygame.time.delay(2000)
-            myBall.rect.topleft = ([50, 50])
+            pygame.time.delay(1000)
             new_life.play()
+            myBall.rect.topleft = ([50, 50])
+            screen.blit(myBall.image, myBall.rect)
+            pygame.display.flip()
+            pygame.time.delay(1000)
+            
 pygame.quit()
+
