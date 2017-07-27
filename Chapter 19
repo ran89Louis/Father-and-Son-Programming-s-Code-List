@@ -1,4 +1,5 @@
 ## 添加声音特效，撞击墙，得分，掉落，生命，游戏结束 代码如下
+## 代码来自18-5
 import pygame, sys
 
 class MyBallClass(pygame.sprite.Sprite):
