@@ -1,0 +1,65 @@
+## 第一章的猜数游戏，添加声音特效，声音文件来自于 example\文件下
+import random, pygame, sys
+pygame.init()
+pygame.mixer.init()
+screen = pygame.display.set_mode([200,100])
+
+ahoy = pygame.mixer.Sound("Ahoy.wav")
+toolow = pygame.mixer.Sound("TooLow.wav")
+toohigh = pygame.mixer.Sound("TooHigh.wav")
+whatGuess = pygame.mixer.Sound("WhatsYerGuess.wav")
+Gotit = pygame.mixer.Sound("AvastGotIt.wav")
+no_more = pygame.mixer.Sound("NoMore.wav")
+
+ahoy.set_volume(0.4)
+toolow.set_volume(0.4)
+toohigh.set_volume(0.4)
+whatGuess.set_volume(0.4)
+Gotit.set_volume(0.4)
+no_more.set_volume(0.4)
+
+secret = random.randint(1, 100)
+guess = 0
+tries = 0
+
+print "AHOY!  I'm the Dread Pirate Roberts, and I have a secret!"
+print "It is a number from 1 to 99. I'll give you 6 tries. "
+ahoy.play()
+pygame.time.delay(8000)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+            
+    while guess != secret and tries < 6:
+        whatGuess.play()
+        guess = input("What's yer guess? ")
+        if guess < secret:
+            print "Too low, ye scurvy dog!"
+            toolow.play()
+            pygame.time.delay(2200)
+        elif guess > secret:
+            print "Too high, landlubber!"
+            toohigh.play()
+            pygame.time.delay(1800)
+    tries = tries + 1
+
+    if guess == secret:
+            print "Avast! you got it! Found my secret, ye did! "
+            Gotit.play()
+            pygame.time.delay(3200)
+            running = False
+    
+    else:
+        print "No more guessess!  Better luck next time, matey!"
+        print "The secret number was",secret
+        no_more.play()
+        pygame.time.delay(3700)
+        running = False
+pygame.quit()
+       
+
+
+    
