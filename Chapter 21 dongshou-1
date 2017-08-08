@@ -1,6 +1,19 @@
+##动手1
 name = raw_input("What is your name?")
 age = raw_input("How old are you?")
 color = raw_input("What is your favorite color?")
 
 print "Your name is", name, "you are", age ,"years old and you like", color
 
+##动手2
+print "Looper\tTimes\t\tResult"
+for looper in range(1,11):
+    print looper,'\t',"times 8 =",'\t',looper * 8
+
+##动手3
+##print "Figure All Fraction of '8'"
+print "Numerator\tDenominator\tResult"
+for i in range (1, 9):
+    result1 = i/8.0
+    result2 = '%.3f' %result1
+    print i,'\t\t','8','\t',i,'/8 =',result2
