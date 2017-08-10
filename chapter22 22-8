@@ -84,9 +84,9 @@ class MyWidget(QtGui.QMainWindow, form_class):
                 self.wrong()
         self.guessBox.setText("")
 
-        def win(self):
-            QtGui.QMessageBox.information(self,"Hangman","You win!")
-            self.new_game()
+    def win(self):
+        QtGui.QMessageBox.information(self,"Hangman","You win!")
+        self.new_game()
         
                 
     def wrong(self):
