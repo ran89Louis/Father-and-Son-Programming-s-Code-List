@@ -1,0 +1,29 @@
+##动动手第一题
+import random
+
+adj_file = open("adj.txt",'r')
+adjectives = adj_file.readline()
+adj_list = adjectives.split(',') 
+adj_file.close()
+
+noun_file = open("nounce.txt",'r')
+nouns = noun_file.readline()
+noun_list = nouns.split(',')
+noun_file.close()
+
+verb_file = open("verb.txt",'r')
+verbs = verb_file.readline()
+verb_list = verbs.split(',')
+verb_file.close()
+
+adverb_file = open("adv.txt",'r')
+adverbs = adverb_file.readline()
+adverb_list = adverbs.split(',')
+adverb_file.close()
+
+adj = random.choice(adj_list)
+noun = random.choice(noun_list)
+verb = random.choice(verb_list)
+adverb = random.choice(adverb_list)
+
+print "The", adj, noun, verb, adverb + '.'
