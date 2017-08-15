@@ -27,3 +27,17 @@ verb = random.choice(verb_list)
 adverb = random.choice(adverb_list)
 
 print "The", adj, noun, verb, adverb + '.'
+
+##第二题
+name = raw_input("What's your name? ")
+age =  raw_input("What's your age? ")
+color = raw_input("What's your favorite color? ")
+food = raw_input("What's your favotite food? ")
+a_file = open("a.txt","w")
+a_file.write(name + '\n')
+a_file.write(age + '\n')
+a_file.write(color + '\n')
+
+a_file.write(food)
+a_file.close()
+
